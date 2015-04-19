@@ -6,6 +6,8 @@ funclist = (FUNCTIONS)->
     @names = FUNCTIONS
     @click = ->
       console.log("funclist click")
+    @swiftUrl = (name) ->
+      "functions/#{name}.html"
   controllerAs: 'funclistCtrl'
   link: (scope, element, attrs, ctrl, transclude) ->
 
