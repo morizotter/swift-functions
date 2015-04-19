@@ -3,8 +3,7 @@ funclist = (FUNCTIONS)->
   replace: true
   templateUrl: "angular/directives/funclist/funclist.html"
   controller: ($scope) ->
-    $scope.names = FUNCTIONS
-    @aaa = "aaa"
+    @names = FUNCTIONS
   controllerAs: 'funclistCtrl'
   link: (scope, element, attrs, ctrl, transclude) ->
 
