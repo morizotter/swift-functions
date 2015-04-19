@@ -23,6 +23,10 @@ gulp.task 'sass', () ->
   .pipe sass()
   .pipe gulp.dest('.tmp/css')
 
+gulp.task 'copy', () ->
+  gulp.src [".functions/*.html"]
+  .pipe gulp.dest '.tmp/functions'
+
 gulp.task 'inject', ->
   css         = gulp.src(".tmp/**/*.css" , {read: false})
   js          = gulp.src(".tmp/**/*.js" , {read: false})
@@ -48,6 +52,7 @@ gulp.task('webserver', ->
 
 gulp.task 'build', -> runSequence(
   ['coffee', 'haml', 'sass'],
+  ['copy'],
   ['inject']
 )
 

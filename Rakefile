@@ -1,3 +1,4 @@
+require 'fileutils'
 namespace :functions do
 
   FUNCTIONS_DIR_PATH = "functions"
@@ -90,6 +91,16 @@ namespace :functions do
     FUNCTIONS.each do |f|
       filepath = "#{FUNCTIONS_DIR_PATH}/#{f}.swift"
       sh "touch #{filepath}" unless File.exist?("#{filepath}")
+    end
+  end
+
+  desc 'convert swift files to html files'
+  task :convert do
+    sh "rm -fr .#{FUNCTIONS_DIR_PATH}" if File.exist?(".#{FUNCTIONS_DIR_PATH}")
+    sh "mkdir .#{FUNCTIONS_DIR_PATH}" unless File.exist?(".#{FUNCTIONS_DIR_PATH}")
+
+    Dir.glob("#{FUNCTIONS_DIR_PATH}/*.swift").each do |f|
+      FileUtils.cp f, ".#{File.dirname(f)}/#{File.basename(f,'.*')}.html"
     end
   end
 
