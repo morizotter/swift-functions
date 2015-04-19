@@ -1,15 +1,12 @@
 funclist = (FUNCTIONS)->
-  scope:
-    names: "@"
+  scope:{}
   replace: true
-  transclude: true
   templateUrl: "angular/directives/funclist/funclist.html"
   controller: ($scope) ->
     $scope.names = FUNCTIONS
+    @aaa = "aaa"
+  controllerAs: 'funclistCtrl'
   link: (scope, element, attrs, ctrl, transclude) ->
-    # console.log(FUNCTIONS)
-    # scope.names = FUNCTIONS
-    # console.log scope.names
 
 angular.module('app')
 .directive 'funclist', ['FUNCTIONS', funclist]
