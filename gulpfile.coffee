@@ -7,6 +7,7 @@ watch       = require 'gulp-watch'
 runSequence = require 'run-sequence'
 series      = require 'stream-series'
 webserver   = require 'gulp-webserver'
+del         = require 'del'
 
 gulp.task 'coffee', () ->
   gulp.src 'src/**/*.coffee'
@@ -26,6 +27,9 @@ gulp.task 'sass', () ->
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
   .pipe gulp.dest '.tmp/functions'
+
+gulp.task 'del:tmp', ->
+  del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
   css         = gulp.src(".tmp/**/*.css" , {read: false})
@@ -51,6 +55,7 @@ gulp.task('webserver', ->
   )
 
 gulp.task 'build', -> runSequence(
+  ['del:tmp']
   ['coffee', 'haml', 'sass'],
   ['copy'],
   ['inject']

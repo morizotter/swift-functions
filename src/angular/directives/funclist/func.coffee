@@ -1,4 +1,4 @@
-func = (FUNCTIONS)->
+func = ()->
   scope:
     name: "@"
   replace: true
@@ -11,4 +11,4 @@ func = (FUNCTIONS)->
       ctrl.click()
 
 angular.module('app')
-.directive 'func', ['FUNCTIONS', func]
+.directive 'func', [func]
