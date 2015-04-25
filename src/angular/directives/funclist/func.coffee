@@ -4,6 +4,7 @@ func = ()->
   replace: true
   require: '^funclist'
   templateUrl: "angular/directives/funclist/func.html"
+  transclude: true
   link: (scope, element, attrs, ctrl) ->
     scope.click = ->
       console.log("func click")
