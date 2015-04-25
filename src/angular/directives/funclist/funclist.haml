@@ -1,6 +1,1 @@
-.funclist{ "ng-repeat" => "name in funclistCtrl.names" }
-  %func{ id: "{{ name }}", name: "{{name}}" }
-    %h3 {{ name }}
-    %p tekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitou
-    %a{ "ng-click" => "click()" } aaa
-    %example{ name: "{{name}}" }
+%func{ name: "{{ name }}", "ng-repeat" => "name in funclistCtrl.names"}
