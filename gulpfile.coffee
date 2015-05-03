@@ -41,11 +41,11 @@ gulp.task 'del:tmp', ->
 
 gulp.task 'inject', ->
   css         = gulp.src ".tmp/angular/**/*.css" , {read: false}
-  js          = gulp.src ".tmp/angular/**/*.js" , {read: false}
   angular     = {
     translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
     translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
+    files: gulp.src ".tmp/angular/**/*.js" , {read: false}
   }
 
   gulp.src ".tmp/**/*.html"
@@ -55,7 +55,7 @@ gulp.task 'inject', ->
       angular.translate,
       angular.translateStaticLoader,
       angular.translateStorageLocal,
-      js
+      angular.files
     ), {relative: true}
   )
   .pipe gulp.dest ".tmp"
