@@ -89,7 +89,7 @@ translations =
     PARAGRAPH: 'And it comes with awesome features!'
 translationsjp =
   HEADLINE: 'スゲートランスレーション'
-  PARAGRAPH: 'Srsly!'
+  PARAGRAPH: 'パラグラフ'
   NAMESPACE:
     PARAGRAPH: 'And it comes with awesome features!'
 
@@ -97,5 +97,8 @@ app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider
   .translations 'en', translations
   .translations 'ja', translationsjp
-  .preferredLanguage 'ja'
-]
+  .registerAvailableLanguageKeys ['en', 'ja'],
+    'en-US': 'en',
+    'ja-JP': 'ja'
+  .determinePreferredLanguage();
+  ]
