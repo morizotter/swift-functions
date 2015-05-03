@@ -95,8 +95,12 @@ translationsjp =
 
 app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider
-  .translations 'en', translations
-  .translations 'ja', translationsjp
+  # .translations 'en', translations
+  # .translations 'ja', translations
+  .useStaticFilesLoader
+    prefix: 'angular/translations/',
+    suffix: '.json'
+  .preferredLanguage 'en'
   .registerAvailableLanguageKeys ['en', 'ja'],
     'en-US': 'en',
     'ja-JP': 'ja'

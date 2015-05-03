@@ -1,0 +1,7 @@
+{
+  HEADLINE: 'awesome',
+  PARAGRAPH: 'para',
+  NAMESPACE: {
+    PARAGRAPH: 'And it comes with awesome features!'
+  }
+}

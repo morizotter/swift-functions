@@ -27,25 +27,32 @@ gulp.task 'sass', () ->
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
   .pipe gulp.dest '.tmp/functions'
-  gulp.src ["bower_components/angular-translate/angular-translate.min.js"]
+  gulp.src ["src/angular/translations/*.json"]
+  .pipe gulp.dest '.tmp/angular/translations'
+  gulp.src [
+    "bower_components/angular-translate/angular-translate.min.js"
+    "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+    ]
   .pipe gulp.dest '.tmp/libs'
 
 gulp.task 'del:tmp', ->
   del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
-  css         = gulp.src(".tmp/**/*.css" , {read: false})
-  js          = gulp.src(".tmp/**/*.js" , {read: false})
+  css         = gulp.src(".tmp/angular/**/*.css" , {read: false})
+  js          = gulp.src(".tmp/angular/**/*.js" , {read: false})
   angular     = {
     translate: gulp.src(".tmp/libs/angular-translate.min.js", {read: false})
+    translateStaticLoader: gulp.src(".tmp/libs/angular-translate-loader-static-files.min.js", {read: false})
   }
 
   gulp.src ".tmp/**/*.html"
   .pipe inject(
     series(
       css,
-      js,
-      angular.translate
+      angular.translate,
+      angular.translateStaticLoader,
+      js
     ), {relative: true}
   )
   .pipe gulp.dest ".tmp"
