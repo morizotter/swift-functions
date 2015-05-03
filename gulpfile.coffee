@@ -34,12 +34,16 @@ gulp.task 'del:tmp', ->
 gulp.task 'inject', ->
   css         = gulp.src(".tmp/**/*.css" , {read: false})
   js          = gulp.src(".tmp/**/*.js" , {read: false})
+  angular     = {
+    translate: gulp.src("bower_components/angular-translate/angular-translate.min.js", {read: false})
+  }
 
   gulp.src ".tmp/**/*.html"
   .pipe inject(
     series(
       css,
-      js
+      js,
+      angular.translate
     ), {relative: true}
   )
   .pipe gulp.dest ".tmp"

@@ -1,0 +1,20 @@
+{
+  "name": "swift-functions",
+  "version": "0.0.0",
+  "homepage": "https://github.com/morizotter/swift-functions",
+  "authors": [
+    "Naoki Morita <namorit@gmail.com>"
+  ],
+  "description": "Swift functions with example",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-translate": "~2.7.0"
+  }
+}
