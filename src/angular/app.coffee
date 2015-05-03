@@ -105,4 +105,5 @@ app.config ['$translateProvider', ($translateProvider) ->
     'en-US': 'en',
     'ja-JP': 'ja'
   .determinePreferredLanguage()
+  .useSanitizeValueStrategy 'escaped'
   ]
