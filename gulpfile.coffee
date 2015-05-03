@@ -7,6 +7,7 @@ watch       = require 'gulp-watch'
 runSequence = require 'run-sequence'
 series      = require 'stream-series'
 webserver   = require 'gulp-webserver'
+del         = require 'del'
 
 gulp.task 'coffee', () ->
   gulp.src 'src/**/*.coffee'
@@ -21,20 +22,39 @@ gulp.task 'haml', ->
 gulp.task 'sass', () ->
   gulp.src 'src/scss/**/*.scss'
   .pipe sass()
-  .pipe gulp.dest('.tmp/css')
+  .pipe gulp.dest '.tmp/css'
 
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
   .pipe gulp.dest '.tmp/functions'
+  gulp.src ["src/i18n/*.json"]
+  .pipe gulp.dest '.tmp/i18n'
+  gulp.src [
+    "bower_components/angular-translate/angular-translate.min.js"
+    "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+    "bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"
+    ]
+  .pipe gulp.dest '.tmp/libs'
+
+gulp.task 'del:tmp', ->
+  del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
-  css         = gulp.src(".tmp/**/*.css" , {read: false})
-  js          = gulp.src(".tmp/**/*.js" , {read: false})
+  css         = gulp.src ".tmp/angular/**/*.css" , {read: false}
+  js          = gulp.src ".tmp/angular/**/*.js" , {read: false}
+  angular     = {
+    translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
+    translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
+    translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
+  }
 
   gulp.src ".tmp/**/*.html"
   .pipe inject(
     series(
       css,
+      angular.translate,
+      angular.translateStaticLoader,
+      angular.translateStorageLocal,
       js
     ), {relative: true}
   )
@@ -51,6 +71,7 @@ gulp.task('webserver', ->
   )
 
 gulp.task 'build', -> runSequence(
+  ['del:tmp']
   ['coffee', 'haml', 'sass'],
   ['copy'],
   ['inject']
