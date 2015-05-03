@@ -22,7 +22,7 @@ gulp.task 'haml', ->
 gulp.task 'sass', () ->
   gulp.src 'src/scss/**/*.scss'
   .pipe sass()
-  .pipe gulp.dest('.tmp/css')
+  .pipe gulp.dest '.tmp/css'
 
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
@@ -39,11 +39,11 @@ gulp.task 'del:tmp', ->
   del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
-  css         = gulp.src(".tmp/angular/**/*.css" , {read: false})
-  js          = gulp.src(".tmp/angular/**/*.js" , {read: false})
+  css         = gulp.src ".tmp/angular/**/*.css" , {read: false}
+  js          = gulp.src ".tmp/angular/**/*.js" , {read: false}
   angular     = {
-    translate: gulp.src(".tmp/libs/angular-translate.min.js", {read: false})
-    translateStaticLoader: gulp.src(".tmp/libs/angular-translate-loader-static-files.min.js", {read: false})
+    translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
+    translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
   }
 
   gulp.src ".tmp/**/*.html"
