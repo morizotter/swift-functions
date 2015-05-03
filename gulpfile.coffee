@@ -32,6 +32,7 @@ gulp.task 'copy', () ->
   gulp.src [
     "bower_components/angular-translate/angular-translate.min.js"
     "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+    "bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"
     ]
   .pipe gulp.dest '.tmp/libs'
 
@@ -44,6 +45,7 @@ gulp.task 'inject', ->
   angular     = {
     translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
+    translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
   }
 
   gulp.src ".tmp/**/*.html"
@@ -52,6 +54,7 @@ gulp.task 'inject', ->
       css,
       angular.translate,
       angular.translateStaticLoader,
+      angular.translateStorageLocal,
       js
     ), {relative: true}
   )
