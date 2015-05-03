@@ -27,8 +27,8 @@ gulp.task 'sass', () ->
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
   .pipe gulp.dest '.tmp/functions'
-  gulp.src ["src/angular/translations/*.json"]
-  .pipe gulp.dest '.tmp/angular/translations'
+  gulp.src ["src/i18n/*.json"]
+  .pipe gulp.dest '.tmp/i18n'
   gulp.src [
     "bower_components/angular-translate/angular-translate.min.js"
     "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"

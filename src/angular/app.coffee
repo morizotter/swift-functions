@@ -96,7 +96,7 @@ translationsjp =
 app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider
   .useStaticFilesLoader {
-    prefix: 'angular/translations/locale-'
+    prefix: 'i18n/locale-'
     suffix: '.json'
   }
   .preferredLanguage 'en'
