@@ -82,17 +82,6 @@ app.constant 'FUNCTIONS', [
   'zip'
   ]
 
-translations =
-  HEADLINE: 'What an awesome module!'
-  PARAGRAPH: 'Srsly!'
-  NAMESPACE:
-    PARAGRAPH: 'And it comes with awesome features!'
-translationsjp =
-  HEADLINE: 'スゲートランスレーション'
-  PARAGRAPH: 'パラグラフ'
-  NAMESPACE:
-    PARAGRAPH: 'And it comes with awesome features!'
-
 app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider
   .useStaticFilesLoader {
