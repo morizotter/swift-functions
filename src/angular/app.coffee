@@ -1,4 +1,4 @@
-app = angular.module('app', [])
+app = angular.module('app', ['pascalprecht.translate'])
 
 app.constant 'FUNCTIONS', [
   'abs',
@@ -81,3 +81,21 @@ app.constant 'FUNCTIONS', [
   'withVaList',
   'zip'
   ]
+
+translations =
+  HEADLINE: 'What an awesome module!'
+  PARAGRAPH: 'Srsly!'
+  NAMESPACE:
+    PARAGRAPH: 'And it comes with awesome features!'
+translationsjp =
+  HEADLINE: 'スゲートランスレーション'
+  PARAGRAPH: 'Srsly!'
+  NAMESPACE:
+    PARAGRAPH: 'And it comes with awesome features!'
+
+app.config ['$translateProvider', ($translateProvider) ->
+  $translateProvider
+  .translations 'en', translations
+  .translations 'ja', translationsjp
+  .preferredLanguage 'ja'
+]

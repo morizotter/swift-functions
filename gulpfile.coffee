@@ -27,6 +27,8 @@ gulp.task 'sass', () ->
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
   .pipe gulp.dest '.tmp/functions'
+  gulp.src ["bower_components/angular-translate/angular-translate.min.js"]
+  .pipe gulp.dest '.tmp/libs'
 
 gulp.task 'del:tmp', ->
   del.sync [".tmp/**/*"]
@@ -35,7 +37,7 @@ gulp.task 'inject', ->
   css         = gulp.src(".tmp/**/*.css" , {read: false})
   js          = gulp.src(".tmp/**/*.js" , {read: false})
   angular     = {
-    translate: gulp.src("bower_components/angular-translate/angular-translate.min.js", {read: false})
+    translate: gulp.src(".tmp/libs/angular-translate.min.js", {read: false})
   }
 
   gulp.src ".tmp/**/*.html"
