@@ -6,8 +6,6 @@ sfFunc = ($translate, $filter, $window)->
   require: '^sfFunclist'
   templateUrl: "app/funclist/directives/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
-    scope.copy = ->
-      console.log($filter('uppercase')(scope.name))
     scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
     # scope.explanation = "FUNCTION.ABS"
 
