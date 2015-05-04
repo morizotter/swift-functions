@@ -1,7 +1,7 @@
 (function() {
   var sfFunclist;
 
-  sfFunclist = function(FUNCTIONS) {
+  sfFunclist = function(FUNCTIONS, VERSION) {
     return {
       scope: {},
       restrict: 'E',
@@ -10,11 +10,12 @@
       controller: function($scope) {},
       controllerAs: 'funclistCtrl',
       link: function(scope, element, attrs, ctrl, transclude) {
-        return scope.names = FUNCTIONS;
+        scope.names = FUNCTIONS;
+        return scope.version = VERSION.SHORT;
       }
     };
   };
 
-  angular.module('app').directive('sfFunclist', ['FUNCTIONS', sfFunclist]);
+  angular.module('app').directive('sfFunclist', ['FUNCTIONS', 'VERSION', sfFunclist]);
 
 }).call(this);

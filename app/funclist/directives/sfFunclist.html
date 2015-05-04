@@ -1,6 +1,12 @@
 <div class="sf-funclist">
   <div class="top-group">
-    <h1 class="title">swift-functions</h1>
+    <h1>
+      <img alt="swift-functions" class="logo" src="images/logo.png">
+    </h1>
+    <p>{{ version }}</p>
+    <div class="introduction" id="introduction">
+      <p>{{ 'INTRODUCTION' | translate }}</p>
+    </div>
     <sf-languages-button></sf-languages-button>
   </div>
   <sf-func id="{{ name }}" name="{{ name }}" ng-repeat="name in names"></sf-func>
