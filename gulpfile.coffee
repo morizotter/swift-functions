@@ -30,6 +30,8 @@ gulp.task 'copy', () ->
   .pipe gulp.dest '.tmp/functions'
   gulp.src ["src/l10n/*.json"]
   .pipe gulp.dest '.tmp/l10n'
+  gulp.src ["src/images/**/*"]
+  .pipe gulp.dest '.tmp/images'
   gulp.src [
     "bower_components/angular/angular.min.js"
     "bower_components/angular/angular.min.js.map"
