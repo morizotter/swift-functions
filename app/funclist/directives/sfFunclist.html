@@ -4,10 +4,15 @@
       <img alt="swift-functions" class="logo" src="images/logo.png">
     </h1>
     <p>{{ version }}</p>
+    <sf-languages-button></sf-languages-button>
     <div class="introduction" id="introduction">
       <p>{{ 'INTRODUCTION' | translate }}</p>
     </div>
-    <sf-languages-button></sf-languages-button>
+    <div class="contribution" id="contribution">
+      <p translate="CONTRIBUTION"></p>
+      <iframe frameborder="0" height="20px" scrolling="0" src="https://ghbtns.com/github-btn.html?user=morizotter&amp;repo=swift-functions&amp;type=star&amp;count=true" width="110px"></iframe>
+      <iframe frameborder="0" height="20px" scrolling="0" src="https://ghbtns.com/github-btn.html?user=morizotter&amp;repo=swift-functions&amp;type=fork&amp;count=true" width="110px"></iframe>
+    </div>
   </div>
   <sf-func id="{{ name }}" name="{{ name }}" ng-repeat="name in names"></sf-func>
 </div>
