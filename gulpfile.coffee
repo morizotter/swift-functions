@@ -30,9 +30,15 @@ gulp.task 'copy', () ->
   gulp.src ["src/l10n/*.json"]
   .pipe gulp.dest '.tmp/l10n'
   gulp.src [
+    "bower_components/angular/angular.min.js"
     "bower_components/angular-translate/angular-translate.min.js"
     "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
     "bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"
+    "bower_components/bootstrap/dist/css/bootstrap.min.css"
+    "bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
+    "bower_components/bootstrap/dist/js/bootstrap.min.js"
+    "bower_components/jquery/dist/jquery.min.js"
+    "bower_components/underscore/underscore-min.js"
     ]
   .pipe gulp.dest '.tmp/libs'
 
@@ -40,8 +46,18 @@ gulp.task 'del:tmp', ->
   del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
-  css         = gulp.src ".tmp/angular/**/*.css" , {read: false}
+  css         = {
+    bootstrap: gulp.src ".tmp/libs/bootstrap.min.css", {read: false}
+    bootstrapTheme: gulp.src ".tmp/libs/bootstrap-theme.min.css", {read: false}
+    files: gulp.src ".tmp/angular/**/*.css", {read: false}
+  }
+  js          = {
+    jquery: gulp.src ".tmp/libs/jquery.min.js", {read: false}
+    underscore: gulp.src ".tmp/libs/underscore-min.js", {read: false}
+    bootstrap: gulp.src ".tmp/libs/bootstrap.min.js", {read: false}
+  }
   angular     = {
+    angular: gulp.src ".tmp/libs/angular.min.js", {read: false}
     translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
     translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
@@ -51,7 +67,13 @@ gulp.task 'inject', ->
   gulp.src ".tmp/**/*.html"
   .pipe inject(
     series(
-      css,
+      css.bootstrap,
+      css.bootstrapTheme,
+      css.files,
+      js.jquery,
+      js.underscore,
+      js.bootstrap,
+      angular.angular,
       angular.translate,
       angular.translateStaticLoader,
       angular.translateStorageLocal,
