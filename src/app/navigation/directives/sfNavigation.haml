@@ -1,6 +1,6 @@
 .sf-navigation
   %h1 swift-functions
   %sf-languages-button
-  %ul
-    %li{ "ng-repeat" => "name in names" }
-      %a{ "ng-click" => "scrollTo(name)" } {{name}}
+  %ul.list
+    %li.list-item{ "ng-repeat" => "name in names" }
+      %a.name{ "ng-click" => "scrollTo(name)" } {{name}}
