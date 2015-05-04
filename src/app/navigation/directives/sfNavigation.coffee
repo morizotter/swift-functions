@@ -4,7 +4,7 @@ sfNavigation = ($location, $anchorScroll, FUNCTIONS)->
   templateUrl: "app/navigation/directives/sfNavigation.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.names = FUNCTIONS
-    debugger
+    
     scope.scrollTo = (id) ->
       $location.hash(id)
       $anchorScroll()
