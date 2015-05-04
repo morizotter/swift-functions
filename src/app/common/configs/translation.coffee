@@ -6,6 +6,14 @@ app.config ['$translateProvider', ($translateProvider) ->
     suffix: '.json'
   }
   .fallbackLanguage 'en'
+  .registerAvailableLanguageKeys ['en', 'ja'], {
+    'en-US': 'en',
+    'en_US': 'en',
+    'en-UK': 'en',
+    'en_UK': 'en',
+    'ja-JP': 'ja',
+    'ja_JP': 'ja'
+  }
   .determinePreferredLanguage()
   .useSanitizeValueStrategy 'escaped'
   ]
