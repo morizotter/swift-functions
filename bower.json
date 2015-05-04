@@ -17,6 +17,8 @@
   "devDependencies": {
     "angular-translate": "~2.7.0",
     "angular-translate-storage-local": "~2.7.0",
-    "angular-translate-loader-static-files": "~2.7.0"
+    "angular-translate-loader-static-files": "~2.7.0",
+    "bootstrap": "~3.3.4",
+    "underscore": "1.8.3"
   }
 }
