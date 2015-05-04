@@ -8,6 +8,7 @@ runSequence = require 'run-sequence'
 series      = require 'stream-series'
 webserver   = require 'gulp-webserver'
 del         = require 'del'
+ghPages     = require 'gulp-gh-pages'
 
 gulp.task 'coffee', () ->
   gulp.src 'src/**/*.coffee'
@@ -116,3 +117,11 @@ gulp.task 'serve', ['build'], ->
     ['webserver'],
     ['watch']
     )
+
+##################################################
+# DEPLOY
+##################################################
+
+gulp.task 'deploy', ->
+  gulp.src '.tmp/**/*'
+  .pipe ghPages()
