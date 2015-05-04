@@ -1,4 +1,6 @@
-app = angular.module('app', ['pascalprecht.translate'])
+app = angular.module('app', [
+  'pascalprecht.translate'
+  ])
 
 app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider

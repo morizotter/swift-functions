@@ -1,4 +1,8 @@
-.languages
-  %ul
-    %li{"ng-repeat" => "language in languagesCtrl.languages" }
-      %p{ "ng-click" => "languagesCtrl.changeLanguage(language)" } {{ "LANGUAGE." + language | translate }}
+.languages.btn-group
+  %button{ :class => "btn btn-default", :type => "button" } {{ currentLanguage }}
+  %button{ :class => "btn btn-default dropdown-toggle", :type => "button", :data => { :toggle => "dropdown" }, :aria => { :expanded => "false" } }
+    %span{ :class => "caret" }
+    %span{ :class => "sr-only"} Toggle Dropdown
+  %ul{ :class => "dropdown-menu", :role => "menu" }
+    %li{"ng-repeat" => "language in languages" }
+      %a{ "ng-click" => "changeLanguage(language)" } {{ "LANGUAGE." + language | uppercase | translate }}

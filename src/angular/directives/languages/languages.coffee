@@ -1,14 +1,24 @@
-languages = (LANGUAGES, $translate)->
+languages = (LANGUAGES, $translate, $filter)->
   scope:{}
   restrict: 'E'
   replace: true
-  controller: ($translate, LANGUAGES) ->
-    @languages = LANGUAGES
-    @changeLanguage = (languageKey) ->
-      $translate.use(languageKey)
-  controllerAs: 'languagesCtrl'
   templateUrl: "angular/directives/languages/languages.html"
   link: (scope, element, attrs, ctrl, transclude) ->
+    scope.languages = LANGUAGES
+    scope.currentLanguage = "LANGUAGE"
+
+    scope.changeLanguage = (languageKey) ->
+      $translate.use(languageKey)
+      scope.updateCurrentLanguage()
+
+    scope.updateCurrentLanguage = ()->
+      key = "LANGUAGE.#{$filter('uppercase')($translate.use())}"
+      $translate(key).then (language) ->
+        scope.currentLanguage = language
+
+    init = () ->
+      scope.updateCurrentLanguage()
+    init()
 
 angular.module('app')
-.directive 'languages', [languages]
+.directive 'languages', ['LANGUAGES', '$translate', '$filter', languages]

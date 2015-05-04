@@ -45,7 +45,7 @@ gulp.task 'inject', ->
     translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
     translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
-    files: gulp.src ".tmp/angular/**/*.js" , {read: false}
+    files: gulp.src ".tmp/angular/**/*.js", {read: false}
   }
 
   gulp.src ".tmp/**/*.html"
