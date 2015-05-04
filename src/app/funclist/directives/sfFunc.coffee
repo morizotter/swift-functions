@@ -1,4 +1,4 @@
-sfFunc = ()->
+sfFunc = ($translate, $filter)->
   scope:
     name: "@"
   restrict: 'E'
@@ -6,10 +6,10 @@ sfFunc = ()->
   require: '^sfFunclist'
   templateUrl: "app/funclist/directives/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
-    scope.click = ->
-      console.log("func click")
-      console.log(ctrl)
-      ctrl.click()
+    scope.copy = ->
+      console.log($filter('uppercase')(scope.name))
+    # scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
+    scope.explanation = "FUNCTION.ABS"
 
 angular.module('app')
-.directive 'sfFunc', [sfFunc]
+.directive 'sfFunc', ['$translate', '$filter', sfFunc]

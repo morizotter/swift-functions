@@ -5,8 +5,7 @@ sfFunclist = (FUNCTIONS)->
   templateUrl: "app/funclist/directives/sfFunclist.html"
   controller: ($scope) ->
     @names = FUNCTIONS
-    @click = ->
-      console.log("funclist click")
+    
     @exampleUrl = (name) ->
       "functions/#{name}.html"
   controllerAs: 'funclistCtrl'

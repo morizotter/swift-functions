@@ -3,6 +3,9 @@
     "EN": "英語",
     "JA": "日本語"
   },
+  "FUNCTION": {
+    "ABS": "あれはこう、これはこう。それはそう。だからそう。 <strong>そして</strong>これはこう"
+  },
   "HEADLINE": "スゲートランスレーション",
   "PARAGRAPH": "パラグラフ",
   "NAMESPACE": {

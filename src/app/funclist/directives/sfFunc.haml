@@ -1,5 +1,5 @@
 .div
   %h3 {{ name }}
-  %p tekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitoutekitou
-  %a{ "ng-click" => "click()" } aaa
+  %p{ :translate => "{{ explanation }}" }
+  %a{ "ng-click" => "copy()" } Copy
   %sf-example{ name: "{{name}}" }
