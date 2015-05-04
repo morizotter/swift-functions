@@ -9,7 +9,9 @@ Swift is new and changing language.
 
 Waiting for your contributions! In special, language translation and English correction are wanted:)
 
-## How to contribute
+### How to contribute
+
+These below are steps to contribute. But currently, this is in the midth of developing. The steps will change. If you have any question please tell me at ease in prs or issues.
 
 ### Clone & test
 Fork and clone this repository. And next, in the directory `npm install` and `bower install`. Then, `gulp build && gulp serve` and you can see site on localhost.
