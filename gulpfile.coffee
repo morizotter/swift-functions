@@ -49,7 +49,7 @@ gulp.task 'inject', ->
   css         = {
     bootstrap: gulp.src ".tmp/lib/bootstrap.min.css", {read: false}
     bootstrapTheme: gulp.src ".tmp/lib/bootstrap-theme.min.css", {read: false}
-    files: gulp.src ".tmp/angular/**/*.css", {read: false}
+    files: gulp.src ".tmp/app/**/*.css", {read: false}
   }
   js          = {
     jquery: gulp.src ".tmp/lib/jquery.min.js", {read: false}
@@ -61,7 +61,7 @@ gulp.task 'inject', ->
     translate: gulp.src ".tmp/lib/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/lib/angular-translate-loader-static-files.min.js", {read: false}
     translateStorageLocal: gulp.src ".tmp/lib/angular-translate-storage-local.min.js", {read: false}
-    files: gulp.src ".tmp/angular/**/*.js", {read: false}
+    files: gulp.src ".tmp/app/**/*.js", {read: false}
   }
 
   gulp.src ".tmp/**/*.html"
