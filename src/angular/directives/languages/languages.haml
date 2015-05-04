@@ -1,3 +1,4 @@
-%ul
-  %li{ "ng-repeat" => "language in languagesCtrl.languages" }
-    %p{ "ng-click" => "languagesCtrl.changeLanguage(language)" } {{ "LANGUAGE." + language | translate }}
+.languages
+  %ul
+    %li{"ng-repeat" => "language in languagesCtrl.languages" }
+      %p{ "ng-click" => "languagesCtrl.changeLanguage(language)" } {{ "LANGUAGE." + language | translate }}

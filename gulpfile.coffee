@@ -20,9 +20,9 @@ gulp.task 'haml', ->
   .pipe gulp.dest ".tmp"
 
 gulp.task 'sass', () ->
-  gulp.src 'src/scss/**/*.scss'
+  gulp.src 'src/**/*.scss'
   .pipe sass()
-  .pipe gulp.dest '.tmp/css'
+  .pipe gulp.dest '.tmp'
 
 gulp.task 'copy', () ->
   gulp.src [".functions/*.html"]
