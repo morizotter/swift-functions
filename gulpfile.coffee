@@ -40,27 +40,27 @@ gulp.task 'copy', () ->
     "bower_components/jquery/dist/jquery.min.js"
     "bower_components/underscore/underscore-min.js"
     ]
-  .pipe gulp.dest '.tmp/libs'
+  .pipe gulp.dest '.tmp/lib'
 
 gulp.task 'del:tmp', ->
   del.sync [".tmp/**/*"]
 
 gulp.task 'inject', ->
   css         = {
-    bootstrap: gulp.src ".tmp/libs/bootstrap.min.css", {read: false}
-    bootstrapTheme: gulp.src ".tmp/libs/bootstrap-theme.min.css", {read: false}
+    bootstrap: gulp.src ".tmp/lib/bootstrap.min.css", {read: false}
+    bootstrapTheme: gulp.src ".tmp/lib/bootstrap-theme.min.css", {read: false}
     files: gulp.src ".tmp/angular/**/*.css", {read: false}
   }
   js          = {
-    jquery: gulp.src ".tmp/libs/jquery.min.js", {read: false}
-    underscore: gulp.src ".tmp/libs/underscore-min.js", {read: false}
-    bootstrap: gulp.src ".tmp/libs/bootstrap.min.js", {read: false}
+    jquery: gulp.src ".tmp/lib/jquery.min.js", {read: false}
+    underscore: gulp.src ".tmp/lib/underscore-min.js", {read: false}
+    bootstrap: gulp.src ".tmp/lib/bootstrap.min.js", {read: false}
   }
   angular     = {
-    angular: gulp.src ".tmp/libs/angular.min.js", {read: false}
-    translate: gulp.src ".tmp/libs/angular-translate.min.js", {read: false}
-    translateStaticLoader: gulp.src ".tmp/libs/angular-translate-loader-static-files.min.js", {read: false}
-    translateStorageLocal: gulp.src ".tmp/libs/angular-translate-storage-local.min.js", {read: false}
+    angular: gulp.src ".tmp/lib/angular.min.js", {read: false}
+    translate: gulp.src ".tmp/lib/angular-translate.min.js", {read: false}
+    translateStaticLoader: gulp.src ".tmp/lib/angular-translate-loader-static-files.min.js", {read: false}
+    translateStorageLocal: gulp.src ".tmp/lib/angular-translate-storage-local.min.js", {read: false}
     files: gulp.src ".tmp/angular/**/*.js", {read: false}
   }
 
