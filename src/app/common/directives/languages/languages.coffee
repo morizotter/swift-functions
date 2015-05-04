@@ -2,7 +2,7 @@ languages = (LANGUAGES, $translate, $filter)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "angular/directives/languages/languages.html"
+  templateUrl: "app/common/directives/languages/languages.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.languages = LANGUAGES
     scope.currentLanguage = "LANGUAGE"
