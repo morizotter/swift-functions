@@ -1,8 +1,8 @@
-funclist = (FUNCTIONS)->
+sfFunclist = (FUNCTIONS)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "app/funclist/directives/funclist/funclist.html"
+  templateUrl: "app/funclist/directives/funclist/sfFunclist.html"
   controller: ($scope) ->
     @names = FUNCTIONS
     @click = ->
@@ -13,4 +13,4 @@ funclist = (FUNCTIONS)->
   link: (scope, element, attrs, ctrl, transclude) ->
 
 angular.module('app')
-.directive 'funclist', ['FUNCTIONS', funclist]
+.directive 'sfFunclist', ['FUNCTIONS', sfFunclist]

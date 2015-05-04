@@ -1,10 +1,10 @@
-func = ()->
+sfFunc = ()->
   scope:
     name: "@"
   restrict: 'E'
   replace: true
-  require: '^funclist'
-  templateUrl: "app/funclist/directives/funclist/func.html"
+  require: '^sfFunclist'
+  templateUrl: "app/funclist/directives/funclist/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
     scope.click = ->
       console.log("func click")
@@ -12,4 +12,4 @@ func = ()->
       ctrl.click()
 
 angular.module('app')
-.directive 'func', [func]
+.directive 'sfFunc', [sfFunc]
