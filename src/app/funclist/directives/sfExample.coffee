@@ -7,7 +7,7 @@ sfExample = ()->
   template: '<pre ng-include="contentUrl"></pre>'
   link: (scope, element, attrs, ctrl) ->
     scope.contentUrl = null
-    scope.contentUrl = ctrl.exampleUrl(scope.name)
+    scope.contentUrl = "functions/#{scope.name}.html"
 
 angular.module('app')
 .directive 'sfExample', [sfExample]
