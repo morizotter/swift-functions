@@ -1,0 +1,15 @@
+a {
+  cursor: pointer;
+  color: #fd6e33;
+  text-decoration: none; }
+  a:link {
+    color: #ed5e23; }
+  a:visited {
+    color: #ed5e23; }
+  a:hover {
+    color: #ff7e43; }
+  a:active {
+    color: #ff7e43; }
+
+body {
+  background: #fafafa; }

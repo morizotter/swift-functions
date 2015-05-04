@@ -1,0 +1,12 @@
+<div class="sf-navigation" ng-class="{'is-mobile':isMobile}">
+  <div class="funclist-group">
+    <ul class="funclist">
+      <li class="funclist-item" ng-repeat="name in names">
+        <div>
+          <span class="pre-name">-></span>
+          <a class="name" ng-click="scrollTo(name)">{{name}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

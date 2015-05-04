@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="scss/application.css">
+  <link rel="stylesheet" href="app/funclist/directives/sfFunc.css">
+  <link rel="stylesheet" href="app/navigation/directives/sfNavigation.css">
+  <link rel="stylesheet" href="app/common/directives/languages-button/sfLanguagesButton.css">
+  <!-- endinject -->
+  <title>swift-functions</title>
+</head>
+<body ng-controller="MainCtrl as main">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+        <sf-navigation></sf-navigation>
+      </div>
+      <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
+        <sf-funclist></sf-funclist>
+      </div>
+    </div>
+  </div>
+  <!-- inject:js -->
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-translate.min.js"></script>
+  <script src="lib/angular-translate-loader-static-files.min.js"></script>
+  <script src="lib/angular-translate-storage-local.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/common/configs/translation.js"></script>
+  <script src="app/common/constants/functions.js"></script>
+  <script src="app/common/constants/languages.js"></script>
+  <script src="app/common/controllers/MainCtrl.js"></script>
+  <script src="app/funclist/directives/sfExample.js"></script>
+  <script src="app/funclist/directives/sfFunc.js"></script>
+  <script src="app/funclist/directives/sfFunclist.js"></script>
+  <script src="app/navigation/directives/sfNavigation.js"></script>
+  <script src="app/common/directives/languages-button/sfLanguagesButton.js"></script>
+  <!-- endinject -->
+</body>
