@@ -1,15 +1,13 @@
 .sf-navigation {
   position: fixed;
   top: 0px;
-  left: 0px;
   overflow: scroll;
   padding: 20px;
   height: 100%;
-  width: 300px;
   border-right: #1f1f1f 1px dotted;
-  .title {
-    margin-top: 0px;
-    font-size: 24px;
+  visibility: visible;
+  &.is-mobile {
+    visibility: hidden;
   }
   .funclist-group {
     .funclist {

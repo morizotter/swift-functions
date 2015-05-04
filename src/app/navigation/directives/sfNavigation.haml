@@ -1,6 +1,4 @@
-.sf-navigation
-  %h1.title swift-functions
-  %sf-languages-button
+.sf-navigation{ "ng-class" => "{'is-mobile':isMobile}" }
   .funclist-group
     %ul.funclist
       %li.funclist-item{ "ng-repeat" => "name in names" }
