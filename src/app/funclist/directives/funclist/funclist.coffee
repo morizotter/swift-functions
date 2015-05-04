@@ -2,7 +2,7 @@ funclist = (FUNCTIONS)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "angular/directives/funclist/funclist.html"
+  templateUrl: "app/funclist/directives/funclist/funclist.html"
   controller: ($scope) ->
     @names = FUNCTIONS
     @click = ->
