@@ -1,4 +1,4 @@
-sfFunc = ($translate, $filter)->
+sfFunc = ($translate, $filter, $window)->
   scope:
     name: "@"
   restrict: 'E'
@@ -8,8 +8,8 @@ sfFunc = ($translate, $filter)->
   link: (scope, element, attrs, ctrl) ->
     scope.copy = ->
       console.log($filter('uppercase')(scope.name))
-    # scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
-    scope.explanation = "FUNCTION.ABS"
+    scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
+    # scope.explanation = "FUNCTION.ABS"
 
 angular.module('app')
-.directive 'sfFunc', ['$translate', '$filter', sfFunc]
+.directive 'sfFunc', ['$translate', '$filter', '$window', sfFunc]

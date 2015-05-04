@@ -3,8 +3,10 @@
     "EN": "English",
     "JA": "Japanese"
   },
+  "INTRODUCTION":" `Swift-functions` 's aim is to make understandable explanation of swift functions.",
   "FUNCTION": {
-    "ABS": "lagagag.gagagaga Tagagaga <strong>strong</strong>afafafadsfadfagadfasfaaasdfafafafafsafsdf"
+    "ABS": "Return absolute value.",
+    "ADVANCE": "Make advance."
   },
   "HEADLINE": "awesome",
   "PARAGRAPH": "para",
