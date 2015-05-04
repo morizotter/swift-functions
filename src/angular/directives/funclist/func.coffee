@@ -1,6 +1,7 @@
 func = ()->
   scope:
     name: "@"
+  restrict: 'E'
   replace: true
   require: '^funclist'
   templateUrl: "angular/directives/funclist/func.html"

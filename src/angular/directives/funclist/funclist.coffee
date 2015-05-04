@@ -1,5 +1,6 @@
 funclist = (FUNCTIONS)->
   scope:{}
+  restrict: 'E'
   replace: true
   templateUrl: "angular/directives/funclist/funclist.html"
   controller: ($scope) ->

@@ -1,5 +1,6 @@
 languages = (LANGUAGES, $translate)->
   scope:{}
+  restrict: 'E'
   replace: true
   controller: ($translate, LANGUAGES) ->
     @languages = LANGUAGES

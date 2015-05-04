@@ -1,6 +1,7 @@
 example = ()->
   scope:
     name: "@"
+  restrict: 'E'
   replace: true
   require: '^funclist'
   template: '<pre ng-include="contentUrl"></pre>'
