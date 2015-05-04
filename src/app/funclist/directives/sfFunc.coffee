@@ -7,7 +7,6 @@ sfFunc = ($translate, $filter, $window)->
   templateUrl: "app/funclist/directives/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
     scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
-    # scope.explanation = "FUNCTION.ABS"
 
 angular.module('app')
 .directive 'sfFunc', ['$translate', '$filter', '$window', sfFunc]
