@@ -8,7 +8,7 @@
       return $translateProvider.useStaticFilesLoader({
         prefix: 'l10n/locale-',
         suffix: '.json'
-      }).fallbackLanguage('en').determinePreferredLanguage().useSanitizeValueStrategy('escaped');
+      }).fallbackLanguage('en').preferredLanguage('en').determinePreferredLanguage().useSanitizeValueStrategy('escaped');
     }
   ]);
 
