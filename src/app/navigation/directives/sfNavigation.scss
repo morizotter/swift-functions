@@ -1,11 +1,13 @@
 .sf-navigation {
+  .title {
+    font-size: 24px;
+  }
   .list {
     padding-left: 0px;
     .list-item {
       list-style: none;
       .name {
         text-decoration: none;
-        cursor: pointer;
       }
     }
   }

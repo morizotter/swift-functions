@@ -52,6 +52,7 @@ gulp.task 'inject', ->
   css         = {
     bootstrap: gulp.src ".tmp/lib/bootstrap.min.css", {read: false}
     bootstrapTheme: gulp.src ".tmp/lib/bootstrap-theme.min.css", {read: false}
+    application: gulp.src ".tmp/scss/*.css", {read: false}
     files: gulp.src ".tmp/app/**/*.css", {read: false}
   }
   js          = {
@@ -72,6 +73,7 @@ gulp.task 'inject', ->
     series(
       css.bootstrap,
       css.bootstrapTheme,
+      css.application,
       css.files,
       js.jquery,
       js.underscore,

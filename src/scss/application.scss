@@ -1,0 +1,9 @@
+a {
+  cursor: pointer;
+  color: #fd6e33;
+  text-decoration: none;
+  &:link { color: #ed5e23; }
+  &:visited { color: #ed5e23; }
+  &:hover { color: #ff7e43; }
+  &:active { color: #ff7e43; }
+}
