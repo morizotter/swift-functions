@@ -1,7 +1,7 @@
 sfNavigation = ($location, $anchorScroll, FUNCTIONS)->
   scope:{}
   replace: true
-  templateUrl: "app/funclist/directives/navigation/sfNavigation.html"
+  templateUrl: "app/navigation/directives/sfNavigation.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.names = FUNCTIONS
     debugger

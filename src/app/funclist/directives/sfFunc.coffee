@@ -4,7 +4,7 @@ sfFunc = ()->
   restrict: 'E'
   replace: true
   require: '^sfFunclist'
-  templateUrl: "app/funclist/directives/funclist/sfFunc.html"
+  templateUrl: "app/funclist/directives/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
     scope.click = ->
       console.log("func click")

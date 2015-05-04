@@ -2,7 +2,7 @@ sfLanguages = (LANGUAGES, $translate, $filter)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "app/funclist/directives/navigation/sfLanguages.html"
+  templateUrl: "app/navigation/directives/sfLanguages.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.languages = LANGUAGES
     scope.currentLanguage = "LANGUAGE"
