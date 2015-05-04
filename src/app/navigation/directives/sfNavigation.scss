@@ -1,0 +1,27 @@
+.sf-navigation {
+  position: fixed;
+  top: 0px;
+  overflow: scroll;
+  padding: 20px;
+  height: 100%;
+  border-right: #1f1f1f 1px dotted;
+  visibility: visible;
+  &.is-mobile {
+    visibility: hidden;
+  }
+  .funclist-group {
+    .funclist {
+      padding-left: 0px;
+      .funclist-item {
+        list-style: none;
+        .pre-name {
+          display: inline-block;
+          font-size: 3px;
+        }
+        .name {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

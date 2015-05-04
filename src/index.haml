@@ -10,15 +10,12 @@
 
   %title swift-functions
 %body{ "ng-controller" => "MainCtrl as main" }
-  %languages
-  %h2 {{ 'HEADLINE' | translate }}
   .container
     .row
-      .col-md-3
-        %table
-      .col-md-9
-        %h1 swift-functions
-        %funclist
+      .col-lg-3.col-md-4.col-sm-5.col-xs-12
+        %sf-navigation
+      .col-lg-9.col-md-8.col-sm-7.col-xs-12
+        %sf-funclist
 
   / inject:js
   / endinject

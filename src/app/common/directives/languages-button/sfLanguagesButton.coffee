@@ -1,8 +1,8 @@
-languages = (LANGUAGES, $translate, $filter)->
+sfLanguagesButton = (LANGUAGES, $translate, $filter)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "app/common/directives/languages/languages.html"
+  templateUrl: "app/common/directives/languages-button/sfLanguagesButton.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.languages = LANGUAGES
     scope.currentLanguage = "LANGUAGE"
@@ -21,4 +21,4 @@ languages = (LANGUAGES, $translate, $filter)->
     init()
 
 angular.module('app')
-.directive 'languages', ['LANGUAGES', '$translate', '$filter', languages]
+.directive 'sfLanguagesButton', ['LANGUAGES', '$translate', '$filter', sfLanguagesButton]

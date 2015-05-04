@@ -31,6 +31,7 @@ gulp.task 'copy', () ->
   .pipe gulp.dest '.tmp/l10n'
   gulp.src [
     "bower_components/angular/angular.min.js"
+    "bower_components/angular/angular.min.js.map"
     "bower_components/angular-translate/angular-translate.min.js"
     "bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
     "bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"
@@ -38,7 +39,9 @@ gulp.task 'copy', () ->
     "bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
     "bower_components/bootstrap/dist/js/bootstrap.min.js"
     "bower_components/jquery/dist/jquery.min.js"
+    "bower_components/jquery/dist/jquery.min.map"
     "bower_components/underscore/underscore-min.js"
+    "bower_components/underscore/underscore-min.map"
     ]
   .pipe gulp.dest '.tmp/lib'
 
@@ -49,6 +52,7 @@ gulp.task 'inject', ->
   css         = {
     bootstrap: gulp.src ".tmp/lib/bootstrap.min.css", {read: false}
     bootstrapTheme: gulp.src ".tmp/lib/bootstrap-theme.min.css", {read: false}
+    application: gulp.src ".tmp/scss/*.css", {read: false}
     files: gulp.src ".tmp/app/**/*.css", {read: false}
   }
   js          = {
@@ -69,6 +73,7 @@ gulp.task 'inject', ->
     series(
       css.bootstrap,
       css.bootstrapTheme,
+      css.application,
       css.files,
       js.jquery,
       js.underscore,
