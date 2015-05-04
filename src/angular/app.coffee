@@ -3,7 +3,7 @@ app = angular.module('app', ['pascalprecht.translate'])
 app.config ['$translateProvider', ($translateProvider) ->
   $translateProvider
   .useStaticFilesLoader {
-    prefix: 'i18n/locale-'
+    prefix: 'l10n/locale-'
     suffix: '.json'
   }
   .preferredLanguage 'en'
