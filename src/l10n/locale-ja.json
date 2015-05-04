@@ -1,4 +1,8 @@
 {
+  "LANGUAGE": {
+    "EN": "英語",
+    "JA": "日本語"
+  },
   "HEADLINE": "スゲートランスレーション",
   "PARAGRAPH": "パラグラフ",
   "NAMESPACE": {

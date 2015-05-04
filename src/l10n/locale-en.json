@@ -1,4 +1,8 @@
 {
+  "LANGUAGE": {
+    "EN": "English",
+    "JA": "Japanese"
+  },
   "HEADLINE": "awesome",
   "PARAGRAPH": "para",
   "NAMESPACE": {
