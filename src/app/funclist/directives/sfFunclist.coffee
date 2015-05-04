@@ -1,4 +1,4 @@
-sfFunclist = (FUNCTIONS)->
+sfFunclist = (FUNCTIONS, VERSION)->
   scope:{}
   restrict: 'E'
   replace: true
@@ -7,6 +7,7 @@ sfFunclist = (FUNCTIONS)->
   controllerAs: 'funclistCtrl'
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.names = FUNCTIONS
+    scope.version = VERSION.SHORT
 
 angular.module('app')
-.directive 'sfFunclist', ['FUNCTIONS', sfFunclist]
+.directive 'sfFunclist', ['FUNCTIONS', 'VERSION', sfFunclist]
