@@ -3,6 +3,7 @@
     %h1
       %img.logo{ :src => "images/logo.png", :alt => "swift-functions" }
     %p {{ version }}
-    %p {{ 'INTRODUCTION' | translate }}
+    .introduction{ :id => "introduction" }
+      %p {{ 'INTRODUCTION' | translate }}
     %sf-languages-button
-  %sf-func{ name: "{{ name }}", id: "{{ name }}", "ng-repeat" => "name in names"}
+  %sf-func{ :name => "{{ name }}", :id => "{{ name }}", "ng-repeat" => "name in names" }
