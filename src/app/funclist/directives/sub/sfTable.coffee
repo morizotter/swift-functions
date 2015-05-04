@@ -1,7 +1,7 @@
-table = ($location, $anchorScroll, FUNCTIONS)->
+sfTable = ($location, $anchorScroll, FUNCTIONS)->
   scope:{}
   replace: true
-  templateUrl: "app/funclist/directives/table/table.html"
+  templateUrl: "app/funclist/directives/sub/sfTable.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.names = FUNCTIONS
     scope.scrollTo = (id) ->
@@ -9,4 +9,4 @@ table = ($location, $anchorScroll, FUNCTIONS)->
       $anchorScroll();
 
 angular.module('app')
-.directive 'table', ['$location', '$anchorScroll', 'FUNCTIONS', table]
+.directive 'sfTable', ['$location', '$anchorScroll', 'FUNCTIONS', sfTable]
