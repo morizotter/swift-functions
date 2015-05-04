@@ -4,6 +4,7 @@
     "JA": "Japanese"
   },
   "INTRODUCTION":" `Swift-functions` 's aim is to make understandable explanation of swift functions.",
+  "CONTRIBUTION": "Your contribution is welcome! See <a href='https://github.com/morizotter/swift-functions/blob/master/README.md'> README</a> how to build and pull request.",
   "FUNCTION": {
     "ABS": "Return absolute value.",
     "ADVANCE": "Make advance.",

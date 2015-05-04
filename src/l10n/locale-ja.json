@@ -4,6 +4,7 @@
     "JA": "日本語"
   },
   "INTRODUCTION":"Swiftの組み込み関数のわかりやすい説明を目指しています。",
+  "CONTRIBUTION": "コミュニティ駆動で進められたらいいなと思っています。Pull Requestの手順などについては、<a href='https://github.com/morizotter/swift-functions/blob/master/README.md'>README</a>をご確認下さい。",
   "FUNCTION": {
     "ABS": "絶対値を返す。",
     "ADVANCE": "進める。",

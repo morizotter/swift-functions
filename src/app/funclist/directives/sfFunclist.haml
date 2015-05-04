@@ -3,7 +3,11 @@
     %h1
       %img.logo{ :src => "images/logo.png", :alt => "swift-functions" }
     %p {{ version }}
+    %sf-languages-button
     .introduction{ :id => "introduction" }
       %p {{ 'INTRODUCTION' | translate }}
-    %sf-languages-button
+    .contribution{ :id => "contribution" }
+      %p{ :translate => 'CONTRIBUTION' }
+      %iframe{ :src => "https://ghbtns.com/github-btn.html?user=morizotter&repo=swift-functions&type=star&count=true", :frameborder => "0", :scrolling => "0", :width => "110px", :height => "20px"}
+      %iframe{ :src => "https://ghbtns.com/github-btn.html?user=morizotter&repo=swift-functions&type=fork&count=true", :frameborder => "0", :scrolling => "0", :width => "110px", :height => "20px"}
   %sf-func{ :name => "{{ name }}", :id => "{{ name }}", "ng-repeat" => "name in names" }
