@@ -4,7 +4,7 @@ func = ()->
   restrict: 'E'
   replace: true
   require: '^funclist'
-  templateUrl: "app/directives/funclist/func.html"
+  templateUrl: "app/funclist/directives/funclist/func.html"
   link: (scope, element, attrs, ctrl) ->
     scope.click = ->
       console.log("func click")
