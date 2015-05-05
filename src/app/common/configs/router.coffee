@@ -4,5 +4,6 @@ app.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterP
   $stateProvider
   .state 'root',
     url: "/",
-    templateUrl: "app/root/root.html"
+    templateUrl: "app/root/root.html",
+    controller: "RootCtrl"
   ]
