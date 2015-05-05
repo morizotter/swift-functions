@@ -47,6 +47,7 @@ gulp.task 'copy', () ->
     "bower_components/jquery/dist/jquery.min.map"
     "bower_components/underscore/underscore-min.js"
     "bower_components/underscore/underscore-min.map"
+    "bower_components/angular-ui-router/release/angular-ui-router.min.js"
     ]
   .pipe gulp.dest '.tmp/lib'
 
@@ -70,6 +71,7 @@ gulp.task 'inject', ->
     translate: gulp.src ".tmp/lib/angular-translate.min.js", {read: false}
     translateStaticLoader: gulp.src ".tmp/lib/angular-translate-loader-static-files.min.js", {read: false}
     translateStorageLocal: gulp.src ".tmp/lib/angular-translate-storage-local.min.js", {read: false}
+    router: gulp.src ".tmp/lib/angular-ui-router.min.js", {read: false}
     files: gulp.src ".tmp/app/**/*.js", {read: false}
   }
 
@@ -87,6 +89,7 @@ gulp.task 'inject', ->
       angular.translate,
       angular.translateStaticLoader,
       angular.translateStorageLocal,
+      angular.router,
       angular.files
     ), {relative: true}
   )

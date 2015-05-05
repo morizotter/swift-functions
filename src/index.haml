@@ -10,13 +10,8 @@
 
   %link{ :rel => "shortcut icon", :href => "favicon.ico" }
   %title swift-functions
-%body{ "ng-controller" => "MainCtrl as main" }
-  .container
-    .row
-      .col-lg-3.col-md-4.col-sm-5.col-xs-12
-        %sf-navigation
-      .col-lg-9.col-md-8.col-sm-7.col-xs-12
-        %sf-funclist
+%body
+  %div{ "ui-view" => "" }
 
   / inject:js
   / endinject

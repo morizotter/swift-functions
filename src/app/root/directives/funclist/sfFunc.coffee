@@ -4,7 +4,7 @@ sfFunc = ($translate, $filter, $window)->
   restrict: 'E'
   replace: true
   require: '^sfFunclist'
-  templateUrl: "app/funclist/directives/sfFunc.html"
+  templateUrl: "app/root/directives/funclist/sfFunc.html"
   link: (scope, element, attrs, ctrl) ->
     scope.explanation = "FUNCTION.#{$filter('uppercase')(scope.name)}"
     scope.contentUrl = "functions/#{scope.name}.html"

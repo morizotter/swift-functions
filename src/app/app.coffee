@@ -1,3 +1,4 @@
-app = angular.module('app', [
+app = angular.module 'app', [
   'pascalprecht.translate'
-  ])
+  'ui.router'
+  ]
