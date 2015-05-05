@@ -6,7 +6,7 @@
       scope: {},
       restrict: 'E',
       replace: true,
-      templateUrl: "app/funclist/directives/sfFunclist.html",
+      templateUrl: "app/root/directives/funclist/sfFunclist.html",
       controller: function($scope) {},
       controllerAs: 'funclistCtrl',
       link: function(scope, element, attrs, ctrl, transclude) {

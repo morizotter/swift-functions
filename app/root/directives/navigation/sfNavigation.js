@@ -5,7 +5,7 @@
     return {
       scope: {},
       replace: true,
-      templateUrl: "app/navigation/directives/sfNavigation.html",
+      templateUrl: "app/root/directives/navigation/sfNavigation.html",
       link: function(scope, element, attrs, ctrl, transclude) {
         var checkIfMobile, init;
         scope.names = FUNCTIONS;

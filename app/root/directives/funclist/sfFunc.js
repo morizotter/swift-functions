@@ -1,7 +1,7 @@
 (function() {
-  var sfExample;
+  var sfFunc;
 
-  sfExample = function() {
+  sfFunc = function($translate, $filter, $window) {
     return {
       scope: {
         name: "@"
@@ -9,14 +9,14 @@
       restrict: 'E',
       replace: true,
       require: '^sfFunclist',
-      template: '<pre ng-include="contentUrl"></pre>',
+      templateUrl: "app/root/directives/funclist/sfFunc.html",
       link: function(scope, element, attrs, ctrl) {
-        scope.contentUrl = null;
+        scope.explanation = "FUNCTION." + ($filter('uppercase')(scope.name));
         return scope.contentUrl = "functions/" + scope.name + ".html";
       }
     };
   };
 
-  angular.module('app').directive('sfExample', [sfExample]);
+  angular.module('app').directive('sfFunc', ['$translate', '$filter', '$window', sfFunc]);
 
 }).call(this);
