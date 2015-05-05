@@ -1,7 +1,7 @@
 sfNavigation = ($location, $anchorScroll,$window, $timeout, FUNCTIONS)->
   scope:{}
   replace: true
-  templateUrl: "app/navigation/directives/sfNavigation.html"
+  templateUrl: "app/root/directives/navigation/sfNavigation.html"
   link: (scope, element, attrs, ctrl, transclude) ->
     scope.names = FUNCTIONS
     scope.isMobile = false

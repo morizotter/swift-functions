@@ -2,7 +2,7 @@ sfFunclist = (FUNCTIONS, VERSION)->
   scope:{}
   restrict: 'E'
   replace: true
-  templateUrl: "app/funclist/directives/sfFunclist.html"
+  templateUrl: "app/root/directives/funclist/sfFunclist.html"
   controller: ($scope) ->
   controllerAs: 'funclistCtrl'
   link: (scope, element, attrs, ctrl, transclude) ->
